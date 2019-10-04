@@ -22,8 +22,14 @@
 //  ]
 //
 // squarePatch(0) should print []
+//(i) => new List(n)
+
+squarePatch(int n){
+  return List.generate(n,(int index)=>List.filled(n,n));
+}
 
 main() {
+  print(squarePatch(3));
 
   List<List<String>> board = [
     ['O', ' ', ' '],
@@ -31,7 +37,7 @@ main() {
     ['X', ' ', ' ']
   ];
 
-  printBoard(board);
+  //printBoard(board);
   // The above call should print:
   //    A   B   C
   // 1  O |   |
@@ -42,6 +48,7 @@ main() {
 
   board[0][2] = 'O';
   printBoard(board);
+  //printBoard(board);
   // The above call should print:
   //    A   B   C
   // 1  O |   | O
@@ -54,3 +61,11 @@ main() {
 // Write a function called 'printBoard' which takes a List of List of Strings,
 // and prints a Tic Tac Toe board to the console.  The board will always
 // have dimensions 3 x 3.
+  printBoard(List eachElement){
+  print('   A   B   C');
+  print('1  ${eachElement[0][0]} | ${eachElement[0][1]} | ${eachElement[0][2]}');
+  print('   ---+---+----   ');
+  print('1  ${eachElement[1][0]} | ${eachElement[1][1]} | ${eachElement[1][2]}');
+  print('   ---+---+----   ');
+  print('1  ${eachElement[2][0]} | ${eachElement[2][1]} | ${eachElement[2][2]}');
+  }
